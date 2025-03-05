@@ -61,31 +61,46 @@ for tp, y in areas_y.items():
     for w,c in winds.items():
         tile_map[f'{tp}_{w}'] = (c[0], c[1] - 72 + 9 + y, c[2], c[3])
     terrains = {
-        "t1a": (0, 0, 1, 1),
-        "t2a": (1, 0, 1, 1),
-        "t3a": (2, 0, 1, 1),
-        "t4a": (2, 1, 1, 1),
-        "t5a": (2, 2, 1, 1),
-        "t6a": (1, 2, 1, 1),
-        "t7a": (0, 2, 1, 1),
-        "t8a": (0, 1, 1, 1),
+        "ta0": (0, 0, 1, 1),
+        "tt1": (1, 0, 1, 1),
+        "tt2": (2, 0, 1, 1),
+        "tt3": (3, 0, 1, 1),
+        "ta1": (4, 0, 1, 1),
+        "tr1": (4, 1, 1, 1),
+        "tr2": (4, 2, 1, 1),
+        "tr3": (4, 3, 1, 1),
+        "ta2": (4, 4, 1, 1),
+        "tb1": (4, 3, 1, 1),
+        "tb2": (4, 2, 1, 1),
+        "tb3": (4, 1, 1, 1),
+        "ta4": (4, 0, 1, 1),
+        "tl1": (3, 0, 1, 1),
+        "tl2": (2, 0, 1, 1),
+        "tl3": (1, 0, 1, 1),
     }
     for w,c in terrains.items():
         tile_map[f'{tp}_{w}'] = (c[0], c[1] + y, c[2], c[3])
 
+mode = "cold"
 to_draw = [
     # {"tile": (0, 0), "pos": (100, 500)},  # Esempio: terreno
     # {"tile": (1, 0), "pos": (148, 500)},  # Proseguimento del terreno
     # {"tile": (3, 1), "pos": (500, 200)},  # Sole
     # {"tile": (0, 2), "pos": (600, 500)},  # Cactus o albero
-    { "tile": "normal_wind1", "pos": (7, 5) },
-    { "tile": "normal_wind2", "pos": (7, 6) },
-    { "tile": "normal_wind3", "pos": (7, 7) },
-    { "tile": "normal_wind4", "pos": (7, 8) },
-    { "tile": "normal_wind5", "pos": (7, 9) },
-    { "tile": "normal_wind6", "pos": (7, 10) },
+    { "tile": f"{mode}_wind1", "pos": (7, 5) },
+    { "tile": f"{mode}_wind2", "pos": (7, 6) },
+    { "tile": f"{mode}_wind3", "pos": (7, 7) },
+    { "tile": f"{mode}_wind4", "pos": (7, 8) },
+    { "tile": f"{mode}_wind5", "pos": (7, 9) },
+    { "tile": f"{mode}_wind6", "pos": (7, 10) },
 
-    { "tile": "normal_t2a", "pos": (11, 3) },
+    { "tile": f"{mode}_tt1", "pos": (10, 20) },
+    { "tile": f"{mode}_tt2", "pos": (11, 20) },
+    { "tile": f"{mode}_tt1", "pos": (12, 20) },
+    { "tile": f"{mode}_tt3", "pos": (13, 20) },
+    { "tile": f"{mode}_tt3", "pos": (14, 20) },
+    { "tile": f"{mode}_ta1", "pos": (15, 20) },
+    { "tile": f"{mode}_tr1", "pos": (15, 21) },
 ]
 
 # Disegna le tile sulla superficie
